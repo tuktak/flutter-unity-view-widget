@@ -76,7 +76,7 @@ class FlutterUnityWidgetPlugin : FlutterPlugin, ActivityAware {
     private fun handleActivityChange(activity: Activity?) {
         Log.d(LOG_TAG, "handleActivityChange")
         if (activity != null) {
-            UnityPlayerUtils.prevActivityRequestedOrientation = activity.requestedOrientation
+//            UnityPlayerUtils.prevActivityRequestedOrientation = activity.requestedOrientation
             UnityPlayerUtils.activity = activity
             return
         }

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:html' as html;
 
 import 'package:flutter/foundation.dart';
@@ -109,11 +110,12 @@ class WebUnityWidgetController extends UnityWidgetController {
           _unityStreamController.add(UnityCreatedEvent(0, {}));
           return;
         }
-
-        _processEvents(UnityWebEvent(
-          name: event.data['name'],
-          data: event.data['data'],
-        ));
+        if(event.data != null && event.data is Map) {
+          _processEvents(UnityWebEvent(
+            name: event.data['name'],
+            data: event.data['data'],
+          ));
+        }
       });
     }
   }
